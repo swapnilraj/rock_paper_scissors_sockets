@@ -30,6 +30,10 @@ socket.on('opponent_played', (data) => {
         console.log('Draw');
     }
 });
+
+socket.on('result', (data) => {
+    console.log(data);
+});
 /**
  * @param {Event} event
  */
