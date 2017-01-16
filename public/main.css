@@ -5,7 +5,7 @@
     padding: 5%;
 }
 
-.hands {
+.row {
     display: flex;
     flex-direction: row;
     align-content: space-around;
@@ -13,6 +13,12 @@
     width: 100%;
     height: 50%;
     margin: 0 auto;
+}
+
+.score {
+    flex-grow: 1;
+    position: relative;
+    left: 90%;
 }
 
 .hand {
