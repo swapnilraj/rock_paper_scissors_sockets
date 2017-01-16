@@ -2,12 +2,6 @@
  * @type {HTMLDivElement}
  */
 const hands = document.querySelector('div.hands');
-const values = {
-    'rock' : 3,
-    'paper': 2,
-    'scissors': 1,
-};
-let myTurn;
 const socket = io.connect('http://localhost:3000');
 
 socket.on('result', (data) => {
@@ -18,9 +12,7 @@ socket.on('result', (data) => {
  */
 const playTurn = (event) => {  
     console.log(event.srcElement.alt);
-    myTurn = values[event.srcElement.alt];
-    console.log(myTurn);
-    socket.emit("user_played", myTurn);
+    socket.emit("user_played", event.srcElement.alt);
 };
 
 ['click', 'touchstart'].forEach(event => hands.addEventListener(event, playTurn));
