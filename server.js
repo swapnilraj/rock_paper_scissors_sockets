@@ -29,16 +29,16 @@ const result = (clientsHand) => {
   const firstHand = clientsHand[0];
   const secondHand = clientsHand[1];
 
-  const difference = values[firstHand['hand']] - values[secondHand['hand']];
+  const difference = values[firstHand.hand] - values[secondHand.hand];
   console.log(difference);
 
   if(difference === 1 || difference === -2){
-    firstHand['socket'].broadcast.emit('result', 'win');
-    secondHand['socket'].broadcast.emit('result', 'lose');
+    firstHand.socket.broadcast.emit('result', 'win');
+    secondHand.socket.broadcast.emit('result', 'lose');
   }
   else if(difference === -1 || difference === 2) {
-    firstHand['socket'].broadcast.emit('result', 'lose');
-    secondHand['socket'].broadcast.emit('result', 'win');
+    firstHand.socket.broadcast.emit('result', 'lose');
+    secondHand.socket.broadcast.emit('result', 'win');
   } else {
     io.sockets.emit('result', 'draw');
   }
@@ -50,12 +50,24 @@ const result = (clientsHand) => {
 io.on('connection', (socket) => {
   socket.on('user_played', (data) => {
     console.log(socket.id + ' ' + data);
-    clientsHand[index++] = {'hand': data,
-                              'socket': socket};
-    if (!(index % 2) && (index != 0)) {
-      index = 0;
-      result (clientsHand);
+
+    if(index == 0) {
+      clientsHand[index++] = {'hand': data,
+                        'socket': socket};
+      console.log('Received')                   
+    } else if (clientsHand[0].socket.id != socket.id) {
+      clientsHand[index++] = {'hand': data,
+                        'socket': socket};
+      console.log('Received')
     }
-    console.log('Received')
+
+    if (!(index % 2) && (index != 0)) {
+      clientsHand[1] = {'hand': data,
+                        'socket': socket};
+      console.log('Received')
+      result (clientsHand);
+      index = 0;
+      clientsHand = [];
+    }
   });
 });
