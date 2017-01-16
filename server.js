@@ -16,8 +16,7 @@ const result = (clientsHand) => {
     firstHand['socket'].broadcast.emit('result', 'lose');
     secondHand['socket'].broadcast.emit('result', 'win');
   } else {
-    firstHand['socket'].broadcast.emit('result', 'draw');
-    secondHand['socket'].broadcast.emit('result', 'draw');
+    io.sockets.emit('result', 'draw');
   }
 };
 
