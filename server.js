@@ -13,7 +13,7 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
   console.log('user connected');
-  socket.on('opponent_played', (data) => {
+  socket.on('user_played', (data) => {
     console.log('Received')
     socket.broadcast.emit('opponent_played', data);
   });

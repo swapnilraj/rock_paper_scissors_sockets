@@ -25,7 +25,7 @@ socket.on('opponent_played', (data) => {
 const playTurn = () => {  
     console.log('Button Press');
     myTurn = input.value;
-    socket.emit("opponent_played", myTurn);
+    socket.emit("user_played", myTurn);
 };
 
 ['click', 'touchstart'].forEach(event => button.addEventListener(event, playTurn));
