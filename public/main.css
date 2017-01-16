@@ -1,6 +1,6 @@
 .container {
     height: 50%;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     padding: 5%;
 }
@@ -17,17 +17,39 @@
 
 .score {
     flex-grow: 1;
-    /*position: relative;
-    left: 90%;*/
 }
 
 .result {
-    flex-grow: 33;
+    flex-grow: 5;
     text-align: center
 }
 
 .hand {
     flex-grow: 1;
+    max-width: 240px;
     text-align: center;
+}
+
+.hand p {
+    position: relative;
+    top: 100%;
+}
+
+.rock {
+	background: url('img/rps.png') no-repeat 0px -180px;
+	width: 240px;
+	height: 240px;
+}
+
+.paper {
+    background: url('img/rps.png') no-repeat -260px -180px;
+	width: 240px;
+	height: 240px;
+}
+
+.scissors {
+    background: url('img/rps.png') no-repeat -520px -180px;
+	width: 240px;
+	height: 240px;
 }
 

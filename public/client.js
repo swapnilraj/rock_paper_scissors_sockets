@@ -31,8 +31,8 @@ socket.on('result', onData);
  * @param {Event} event
  */
 const playTurn = (event) => {  
-    console.log(event.srcElement.alt);
-    socket.emit("user_played", event.srcElement.alt);
+    console.log(event.target.className.split(' ')[0]);
+    socket.emit("user_played", event.target.className.split(' ')[0]);
 };
 
 ['click', 'touchstart'].forEach(event => hands.addEventListener(event, playTurn));
