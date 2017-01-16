@@ -29,11 +29,14 @@ const result = (clientsHand) => {
   const firstHand = clientsHand[0];
   const secondHand = clientsHand[1];
 
-  if(values[firstHand['hand']] < values[secondHand['hand']]){
+  const difference = values[firstHand['hand']] - values[secondHand['hand']];
+  console.log(difference);
+
+  if(difference === 1 || difference === -2){
     firstHand['socket'].broadcast.emit('result', 'win');
     secondHand['socket'].broadcast.emit('result', 'lose');
   }
-  else if(values[firstHand['hand']] > values[secondHand['hand']]) {
+  else if(difference === -1 || difference === 2) {
     firstHand['socket'].broadcast.emit('result', 'lose');
     secondHand['socket'].broadcast.emit('result', 'win');
   } else {
