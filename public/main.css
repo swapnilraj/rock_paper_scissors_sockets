@@ -17,8 +17,13 @@
 
 .score {
     flex-grow: 1;
-    position: relative;
-    left: 90%;
+    /*position: relative;
+    left: 90%;*/
+}
+
+.result {
+    flex-grow: 33;
+    text-align: center
 }
 
 .hand {
