@@ -11,9 +11,9 @@ const input = document.querySelector('body > input');
  */
 const hands = document.querySelector('div.hands');
 const rps = {
-    'rock' : 1,
+    'rock' : 3,
     'paper': 2,
-    'scissors': 3,
+    'scissors': 1,
 };
 let myTurn;
 const socket = io.connect('http://localhost:3000');

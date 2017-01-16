@@ -16,6 +16,7 @@
 }
 
 .hand {
-    padding-left: 10%;
+    flex-grow: 1;
+    text-align: center;
 }
 

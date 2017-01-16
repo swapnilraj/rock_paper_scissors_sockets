@@ -18,4 +18,3 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('opponent_played', data);
   });
 });
-
