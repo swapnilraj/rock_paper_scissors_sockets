@@ -2,7 +2,7 @@
  * @type {HTMLDivElement}
  */
 const hands = document.querySelector('div.hands');
-const rps = {
+const values = {
     'rock' : 3,
     'paper': 2,
     'scissors': 1,
@@ -18,7 +18,7 @@ socket.on('result', (data) => {
  */
 const playTurn = (event) => {  
     console.log(event.srcElement.alt);
-    myTurn = rps[event.srcElement.alt];
+    myTurn = values[event.srcElement.alt];
     console.log(myTurn);
     socket.emit("user_played", myTurn);
 };
