@@ -2,7 +2,7 @@
  * @type {HTMLDivElement}
  */
 const hands = document.querySelector('div.hands');
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect('/');
 
 socket.on('result', (data) => {
     console.log(data);
