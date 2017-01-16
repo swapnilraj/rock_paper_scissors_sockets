@@ -11,11 +11,11 @@ const server = app.listen(3000, () => {
 const io = require('socket.io')(server);  
 
 
-io.on('connection', function(socket){
+io.on('connection', (socket) => {
   console.log('user connected');
-  socket.on('message', (data) => {
+  socket.on('opponent_played', (data) => {
     console.log('Received')
-    socket.broadcast.emit('message', data);
+    socket.broadcast.emit('opponent_played', data);
   });
 });
 
