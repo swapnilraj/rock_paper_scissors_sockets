@@ -36,13 +36,13 @@
 }
 
 .rock {
-	background: url('img/rps.png') no-repeat 0px -180px;
+	background: url('img/rps.png') no-repeat -24px -170px;
 	width: 240px;
 	height: 240px;
 }
 
 .paper {
-    background: url('img/rps.png') no-repeat -260px -180px;
+    background: url('img/rps.png') no-repeat -264px -180px;
 	width: 240px;
 	height: 240px;
 }
