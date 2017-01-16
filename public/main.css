@@ -41,13 +41,13 @@
 	height: 240px;
 }
 
-.paper {
+.scissors {
     background: url('img/rps.png') no-repeat -264px -180px;
 	width: 240px;
 	height: 240px;
 }
 
-.scissors {
+.paper {
     background: url('img/rps.png') no-repeat -520px -180px;
 	width: 240px;
 	height: 240px;
